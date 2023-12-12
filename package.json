@@ -6,6 +6,7 @@
   "scripts": {
       "start": "nodemon ./greet.js",
       "test": "jest --watch",
+      "build": "npm build",
       "coverage": "jest --coverage --collectCoverageFrom=['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.test.{js,jsx,ts,tsx}']",
       "lint": "eslint ./*.js",
       "lint:fix": "eslint --fix ./*.js",
