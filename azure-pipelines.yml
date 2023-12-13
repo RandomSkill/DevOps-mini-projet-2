@@ -1,0 +1,53 @@
+
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install & build '
+
+- script: |
+    # Afficher l'heure de début de la pipeline
+    echo "Heure de début de la pipeline: $(date)"
+  displayName: 'Afficher l heure de début'
+
+- script: |
+    # Formater le code avec Prettier
+    npm run prettier
+  displayName: 'Formater le code avec Prettier'
+
+- script: |
+    # Linter le code avec ESLint
+    npm run lint
+  displayName: 'Lint du code avec ESLint'
+
+- script: |
+    # Vérifier le coverage avec Jest (assurez-vous que le seuil est à 80%)
+    npm run coverage
+  displayName: 'Vérification du coverage avec Jest'
+
+
+- script: |
+    # Afficher l'heure de fin de la pipeline
+    echo "Heure de fin de la pipeline: $(date)"
+  displayName: 'Afficher l heure de fin'
+
+- script: |
+    # Afficher le message de succès
+    echo "PIPELINE SUCCESS WITHOUT ERRORS"
+  displayName: 'Afficher le message de succès'
+  
