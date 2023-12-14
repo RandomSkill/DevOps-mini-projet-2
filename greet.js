@@ -9,7 +9,7 @@ const nameCase = {
 const FR = ['Bonjour,', 'et', 'ET BONJOUR', 'Bonjour, mon ami.', 'BONJOUR,'];
 const EN = ['Hello,', 'and', 'AND HELLO', 'Hello, my friend.', 'HELLO,'];
 const ND = ['Hallo,', 'en', 'EN HALLO', 'Hallo, mijn vriend.', 'HALLO,'];
-const enri= ['Hallo,', 'en', 'EN HALLO', 'Hallo, mijn vriend.', 'HALLO,'];
+const enri = ['Hallo,', 'en', 'EN HALLO', 'Hallo, mijn vriend.', 'HALLO,'];
 function greet(names, lang) {
   switch (lang) {
     case 'FR':
