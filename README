@@ -43,23 +43,25 @@ Liens utiles:
 
 - Décrivez brièvement ce que fait votre fichier YML.  
 ```bash
-<votre réponse ici>
+indique sur qelle branch le worflow s'applique. is sur les push et les pull request sur la branche main.
+ensuite install node version 18 , install les dependance et build 
+affiche l'heure , verifier que prettier et lint sont bien respecter, verifie le le covarge de jest, affiche l'heure a la fin de la pipelinne et affiche un succes message . 
 ```
 - En particulier : à quoi sert le “on” ? dans votre fichier YML ?  Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ? 
 ```bash
-<votre réponse ici>
+le on sert a designer les action qui "activerons" notre pipeline. on push activera la pipeline a chaque fois que quelque chose est push sur le main (psq on a juste mis un trigger sur le main) . on pull activera lors que l'onn merge un branche sur la branche main. nous conseillons le on push , car les debutant oublirons peu etre de cree des branches au developpement de chanque nvelle fonctionnalité. 
 ```
 - Quelle est la différence entre run et run_on ?  Expliquez par rapport à votre pipeline.  
 ```bash
-<votre réponse ici>
+run on indique le systeme d'explotation de la machine virtuel (ici ubuntu), run designe les commandes a effectuer
 ```
 - Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline. 
 ```bash
-<votre réponse ici>
+use est utilisé pour faire appel des actions deja defini , run lance des action que l'on defini nous meme
 ```
 - Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline. 
 ```bash
-<votre réponse ici>
+les etapes que l'on ne peut intervertir sont installation de node et de nos dependance , le reset sont interchangabe
 ```
 - Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ?  Quelles questions devriez-vous vous poser ? 
 ```bash
